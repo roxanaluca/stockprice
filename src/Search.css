@@ -1,0 +1,37 @@
+.suggestions-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: absolute;
+  color: #282c34;
+  left: 1vw;
+  right: 1vw;
+  padding-top: 10px;
+  background-color: white;
+}
+
+form{
+  padding:10px 0px;
+}
+
+.suggestions{
+  font-size: 0.87rem;
+}
+
+.suggestions-list>div{
+  flex-basis: calc(200px + 4vmin);
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+input[type=text]{
+  transition: width 0.4s ease-in-out;
+  width: 50px;
+}
+
+input[type=text]:focus{
+  width: 200px;
+  padding:0px;
+}

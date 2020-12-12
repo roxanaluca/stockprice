@@ -1,25 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import Search from './Search';
 
-function App() {
-  return (
+class App extends React.Component{
+
+  constructor(props) {
+    super(props);
+    this.state = {searchName: ""};
+    this.onSelectStockSymbol = this.onSelectStockSymbol.bind(this);
+  }
+
+  onSelectStockSymbol(name){
+    this.setState({searchName: name});
+  }
+
+  render(){
+
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <header className="App-header">
+          <div className="App-header-name">
+            <img src={logo} className="App-logo" alt="logo" />
+            <p>
+              StockPrice
+            </p>
+          </div>
+          <Search onSelectStockSymbol={this.onSelectStockSymbol}/>
+        </header>
+      </div>
+
+      <h1>{this.state.searchName}</h1>
     </div>
-  );
+    );
+  }
 }
 
 export default App;
