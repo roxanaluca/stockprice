@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import Search from './Search';
+import Chart from './Chart';
 
 class App extends React.Component{
 
@@ -30,8 +31,7 @@ class App extends React.Component{
           <Search onSelectStockSymbol={this.onSelectStockSymbol}/>
         </header>
       </div>
-
-      <h1>{this.state.searchName}</h1>
+      {(this.state.searchName)?<Chart searchName={this.state.searchName} />:""}
     </div>
     );
   }

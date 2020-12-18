@@ -1,0 +1,63 @@
+.grid {
+  display: grid;
+  position: relative;
+  grid-template-rows: auto 300px 150px 500px auto;
+  grid-template-columns: auto 500px 150px 150px auto;
+  grid-template-areas:
+    ". canvas part-right settings ."
+    ". part-down . settings .";
+}
+
+.grid>.canvas{
+  grid-area: canvas;
+  position: relative;
+}
+
+.dot {
+  height: 5px;
+  width: 5px;
+  background-color: #FF0000;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+
+canvas{
+  width:500px;
+  height:300px;
+}
+
+.grid form{
+  grid-area: settings;
+}
+
+.grid>.part-down{
+  position:relative;
+  grid-area:part-down;
+}
+
+.grid>.part-right{
+  position:relative;
+  grid-area:part-right;
+}
+
+#currentDate, #currentAverage, #currentPrice{
+  position: absolute;
+}
+
+ #currentPrice{
+   height:max-content;
+ }
+
+#currentDate>div{
+  width:max-content;
+}
+
+form>div{
+  display:flex;
+  direction: row;
+}
+
+label{
+  display: block;
+}

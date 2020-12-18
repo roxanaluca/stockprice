@@ -64,7 +64,6 @@ class Search extends React.Component{
       this.props.onSelectStockSymbol("");
       this.setState({suggestions:data})
     }
-    console.log(data)
   }
 
   render(){
