@@ -20,10 +20,13 @@ const Settings =(props) =>{
      event.preventDefault();
       if (endSpanDisplay === "none" &&
           startSpanDisplay === "none") {
-          var start =new Date(startDateValue).getTime()/1000;
-          var end = new Date(endDateValue).getTime()/1000;
-          setMessageDisplay("none");
-          props.updateChart(start,end,buttonState)
+          var start =(new Date(startDateValue)).getTime()/1000+24*60*60;
+          var end = (new Date(endDateValue)).getTime()/1000+24*60*60;
+          if (start<end) {
+            setMessageDisplay("none");
+            props.updateChart(start,end,buttonState)
+          }
+          else setMessageDisplay("block");
       }
       else setMessageDisplay("block");
   }
