@@ -1,8 +1,8 @@
 .grid {
   display: grid;
   position: relative;
-  grid-template-rows: auto 300px 150px 500px auto;
-  grid-template-columns: auto 500px 150px 150px auto;
+  grid-template-rows: 300px 100px;
+  grid-template-columns: auto 500px 150px 200px auto;
   grid-template-areas:
     ". canvas part-right settings ."
     ". part-down . settings .";
@@ -16,19 +16,18 @@
 .dot {
   height: 5px;
   width: 5px;
-  background-color: #FF0000;
+  background-color: #0000FF;
   border-radius: 50%;
   display: inline-block;
   position: absolute;
 }
 
-canvas{
-  width:500px;
-  height:300px;
+.grid>div:last-child{
+  grid-area: settings;
 }
 
-.grid form{
-  grid-area: settings;
+.grid h3{
+  margin-bottom: 5px;
 }
 
 .grid>.part-down{
@@ -45,6 +44,14 @@ canvas{
   position: absolute;
 }
 
+#currentDate,#currentPrice{
+  color:#0000FF;
+}
+
+#currentAverage{
+  color:#00FF00;
+}
+
  #currentPrice{
    height:max-content;
  }
@@ -54,8 +61,18 @@ canvas{
 }
 
 form>div{
+  margin-bottom: 5px;
   display:flex;
-  direction: row;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+form>div>span{
+  color:#FF0000;
+}
+
+#settings-message{
+  color:#FF0000;
 }
 
 label{
